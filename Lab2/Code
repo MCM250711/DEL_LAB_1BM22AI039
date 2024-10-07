@@ -92,9 +92,14 @@ for activation in activation_functions:
     # Accuracy
     accuracy = np.mean(predictions == y) * 100
     results[activation] = accuracy
+    
+    # Print predictions
+    print(f"\nPredictions with {activation.capitalize()}:")
+    for i in range(len(X)):
+        print(f"Input: {X[i]} => Predicted Output: {predictions[i][0]}, Actual Output: {y[i][0]}")
 
 # Print accuracy results
-print("Accuracy with Different Activation Functions:")
+print("\nAccuracy with Different Activation Functions:")
 for activation, accuracy in results.items():
     print(f"{activation.capitalize()}: {accuracy:.2f}%")
 
